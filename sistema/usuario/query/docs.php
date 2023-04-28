@@ -112,5 +112,53 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
         </div>
     ';
 }
+if($no_resultados == 0 || empty($no_resultados)){
+echo'
+
+<div class="col">
+if($no_resultados == 0 || empty($no_resultados)){
+
+<div class="card border-danger text-light" style="height:300px; background-color:rgba(250, 6, 22, 0.7);" id="botonesFiles">
+';
+// else if($no_resultados > 0 && $no_resultados <= $no_resultados_warning){
+//     echo '
+// <div class="card border-warning" style="height:300px">
+//     ';
+// }
+}
+else if($no_resultados > 0){
+  echo '
+<div class="card border-success  text-light" style="height:300px; background-color:rgba(8, 66, 152, 0.9);">
+  ';
+}
+echo'
+  
+  <div class="card-body text-justify">
+  
+  <h5 class="card-title"><i class="bi bi-filetype-pdf"></i> '.$rowQuery['documento'].'</h5>
+  <p>
+    <small class="card-text text-justify">'.$rowQuery['descripcion'].'</small>
+  </p>
+    <p class="text-center h1 h-50"><i class="bi bi-filetype-pdf"></i></p>
+  </div>
+  <div class="card-footer">
+  ';
+  if($no_resultados == 0 || empty($no_resultados)){
+      echo'
+  <a href="#" class="card-link text-light h6" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#cargarDoc'.$rowQuery['id'].'"><i class="bi bi-plus-circle"></i> Cargar documento</a>';
+  }
+  else{
+      echo'
+  <a href="#" class="card-link text-light h6" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#editarDoc'.$rowQuery['id'].'"><i class="bi bi-pencil-square"></i> Editar</a>
+  <a href="../'.$rowDocs['link'].'" target="_blank" class="card-link text-light h6" style="text-decoration: none"><i class="bi bi-eye"></i> Visualizar</a>
+  ';
+  }
+  echo'
+  </div>
+
+</div>
+</div>
+
+';
 
 ?>
