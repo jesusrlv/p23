@@ -15,6 +15,7 @@ require('conn/qc.php');
     $edad = $_POST['edad'];
     $email = $_POST['email'];
     $pwd = $_POST['pwd'];
+    $categoria = $_POST['categoria'];
     $perfil = 1;
 
     $sql = "INSERT INTO usr(
@@ -25,7 +26,9 @@ require('conn/qc.php');
         curp,
         edad,
         pwd,
-        perfil)
+        perfil,
+        categoria
+        )
         VALUES(
             '$email',
             '$nombre',
@@ -34,7 +37,8 @@ require('conn/qc.php');
             '$curp',
             '$edad',
             '$pwd',
-            '$perfil'
+            '$perfil',
+            '$categoria'
             )
         ";
         // email
@@ -86,7 +90,8 @@ require('conn/qc.php');
         
     }
     else{
-        echo json_encode(array('success' => 0));
+        $error = $conn->error;
+        echo json_encode(array('success' => 0,'error'=>$error));
         
     }
 

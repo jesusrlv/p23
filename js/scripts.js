@@ -219,7 +219,7 @@ $(document).ready(function() {
      });
 });
 
-// REGISTRO DE USUARIOS MX
+// REGISTRO DE USUARIOS
 $(document).ready(function() {
     $('#registroMX').submit(function(e) {
         document.getElementById('boton_submit').hidden = true;
@@ -230,6 +230,7 @@ $(document).ready(function() {
         var email = document.getElementById('email').value;
         var pwd = document.getElementById('pwd').value;
         var telefono = document.getElementById('telefono').value;
+        var categoria = document.getElementById('categoria').value;
 
         // sweetalert
         let timerInterval
@@ -268,7 +269,8 @@ $(document).ready(function() {
                 edad:edad,
                 email:email,
                 pwd:pwd,
-                telefono:telefono
+                telefono:telefono,
+                categoria:categoria
             },
             success: function(response)
             {
@@ -291,6 +293,7 @@ $(document).ready(function() {
                 }
                 else
                 {
+                    console.log(jsonData.error)
                     // alert('Invalid Credentials!');
                     Swal.fire({
                         icon: 'error',
@@ -305,6 +308,10 @@ $(document).ready(function() {
        });
      });
 });
+
+function alertaC(){
+    alert("Estás seleccionando esta categoría para participar, al registrarte con esta, no podrás cambiar a otra");
+}
 
 // REGISTRO DE USUARIOS USA
 $(document).ready(function() {
@@ -397,7 +404,18 @@ function loaded() {
             $('#municipio').html(data);
         }
     });
+
+    $.ajax({
+        url: "sistema/usuario/query/categoria.php",
+        success: function(data) {
+            $('#categoria').html(data);
+        }
+    });
 }
+
+// function loaded() {
+    
+// }
 
 // BLOQUEO DE MODALS
 function bloquearMDS(){

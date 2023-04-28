@@ -1,7 +1,7 @@
 <?php
 
     $servername="localhost";
-    $database="consejo_juvenil"; //solo se quitó para conexión remota
+    $database="p23"; //solo se quitó para conexión remota
     $username="root";
     $password="";
 

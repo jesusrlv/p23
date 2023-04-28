@@ -52,7 +52,7 @@ body {
 }
 #preForm{
   background-color: rgba(184, 11, 4, 0.5);
-  border-radius:9px   
+  border-radius:9px ;  
 }
 
 @media screen and (max-width: 2000px) {

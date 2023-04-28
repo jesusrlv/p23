@@ -124,29 +124,29 @@ $perfil = $_SESSION['perfil'];
     
 <header>
 <span id="inicio"></span>
-  <div class="navbar navbar-dark shadow-sm" style="background:#b94c47">
+  <div class="navbar navbar-dark shadow-sm" style="background:rgba(184, 11, 4, 1)">
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
         <img src="../../img/logo_injuventud_0.png" width="20" alt="" class="me-1">
-        <strong>POSTULANTE | Consejo Juvenil 2023</strong>
+        <strong>POSTULANTE | PREMIO ESTATAL DE LA JUVENTUD 2023</strong>
       </a>
       <a href="prcd/sort.php" type="button" class="btn btn-sm btn-outline-light"><i class="bi bi-door-open"></i> Salir</a>
     </div>
   </div>
 </header>
 
-<main>
+<main style="background-image: url('../../img/fondo_prueba.jpg');background-position: center;background-repeat: no-repeat;background-size: cover; width:100%; height:100%;">
 
   <!-- <section class="py-5 text-center container"> -->
   <section class="text-center container">
     <!-- <div class="row py-lg-5"  style="background-image: url('../../img/logo_consejo_05.png')"> -->
-    <div class="row py-lg-5"  style="background-image: url('../../assets/img/background.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;width:100%;">
-      <div class="col-lg-6 col-md-8 mx-auto rounded bg-light bg-opacity-50 p-2">
-        <h1 class="fw-light"><img src="../../img/logo_consejo_04.png" alt="" width="360"></h1>
-        <h2 class="fw-bold" style="color:#5a5557">Bienvenido</h2>
-        <h2 class="fw-bold" style="color:#5a5557"><i class="bi bi-person-circle"></i></h2>
-        <h2 class="fw-bold" style="color:#5a5557"><?php echo $nombre ?></h2>
-        <p class="lead text-dark mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
+    <div class="row py-lg-5"  >
+      <div class="col-lg-6 col-md-8 mx-auto rounded p-2" style="background-color: rgba(184, 11, 4, 0.8); ">
+        <h1 class="fw-light"><img src="../../img/PEJ23.png" alt="" width="360"></h1>
+        <h2 class="fw-bold" style="color:white">Bienvenido</h2>
+        <h2 class="fw-bold" style="color:white"><i class="bi bi-person-circle"></i></h2>
+        <h2 class="fw-bold" style="color:white"><?php echo $nombre ?></h2>
+        <p class="lead text-light mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
           <hr class="text-secondary">
           <a href="#seccion_documentos" class="btn btn-primary my-2"><i class="bi bi-filetype-pdf"></i> Sección de documentos</a>
