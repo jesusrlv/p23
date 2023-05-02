@@ -106,5 +106,27 @@ function _(el2) {
     
   }
   
-  
-               
+// subir video
+
+function uploadVideo(idDoc,idUsr){
+  $.ajax({
+    type: "POST",
+    url: 'prcd/date.php',
+    dataType:'json',
+    data:{
+        dateBLQ:dateBLQ
+    },
+    success: function(response)
+    {
+        // var jsonData = JSON.parse(response);
+        var jsonData = JSON.parse(JSON.stringify(response));
+        // user is logged in successfully in the back-end
+        // let's redirect
+        if (jsonData.success == "1")
+        {
+            document.getElementById('bloquearMDL').hidden = true;
+        }
+    }
+});
+
+}
