@@ -140,7 +140,13 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
               <div class="modal-body">
                 <form id="upload_form" enctype="multipart/form-data" method="post">';
                 ?>
-                  <input type="file" name="file<?php echo $idDoc?>" id="file<?php echo $idDoc?>" onchange="uploadFile(<?php echo $idDoc ?>,<?php echo $id ?>)" accept="application/pdf" class="h6 w-100 mt-3"><br>
+                  <input type="text" name="file<?php echo $idDoc?>" id="file<?php echo $idDoc?>" onchange="uploadFile(<?php echo $idDoc ?>,<?php echo $id ?>)" accept="application/pdf" class="h6 w-100 mt-3"><br>
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-youtube"></i></span>
+                    <input type="text" class="form-control" placeholder="Link de video" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <br>
                 <?php
                 echo'
                   <progress id="progressBar'.$idDoc.'" value="0" max="100" style="width:300px;"></progress>
