@@ -125,8 +125,8 @@ function uploadVideo(idDoc,idUsr){
     success: function(response)
     {
         var jsonData = JSON.parse(JSON.stringify(response));
-        if (jsonData.success == "1")
-        {
+        var successVideo = jsonData.success;
+        if (successVideo == "1"){
         
           // console.log(jsonData.error);
           // console.log(video);
@@ -139,7 +139,7 @@ function uploadVideo(idDoc,idUsr){
             text: 'Proceso correcto',
             confirmButtonColor: '#3085d6',
             footer: 'INJUVENTUD'
-        });
+        })
       }
 
     }

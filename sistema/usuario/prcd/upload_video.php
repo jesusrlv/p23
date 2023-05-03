@@ -20,7 +20,8 @@ if ($resultado){
     console.log("Registro de video exitoso");
     </script>
     ';
-    echo json_encode(array('success'=>1));
+    echo json_encode(array('success '=> 1));
+
 
 }   
 else {
@@ -29,8 +30,8 @@ else {
     console.log("Registro de video no exitoso");
     </script>
     ';
-$error = $conn->error;
-echo json_encode(array('error'=>$error));
+    $error = $conn->error;
+    echo json_encode(array('error'=>$error));
 }
     
 ?>
