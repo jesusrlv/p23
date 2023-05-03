@@ -127,19 +127,17 @@ function uploadVideo(idDoc,idUsr){
         var jsonData = JSON.parse(JSON.stringify(response));
         var successVideo = jsonData.success;
         if (successVideo == "1"){
-        
-          // console.log(jsonData.error);
-          // console.log(video);
 
           Swal.fire({
             icon: 'success',
-            imageUrl: '../../img/logo_consejo_04.png',
+            imageUrl: '../../img/PEJ23.png',
             imageHeight: 200,
             title: 'Video cargado',
             text: 'Proceso correcto',
             confirmButtonColor: '#3085d6',
             footer: 'INJUVENTUD'
-        })
+
+        });
       }
 
     }
