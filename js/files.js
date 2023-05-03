@@ -109,24 +109,46 @@ function _(el2) {
 // subir video
 
 function uploadVideo(idDoc,idUsr){
+  var video = document.getElementById('fileVideo'+idDoc).value;
+  var idD = idDoc;
+  var idU = idUsr;
   $.ajax({
     type: "POST",
-    url: 'prcd/date.php',
+    url: 'prcd/upload_video.php',
     dataType:'json',
+    // dataType:'html',
     data:{
-        dateBLQ:dateBLQ
+        idD:idD,
+        idU:idU,
+        video:video
     },
     success: function(response)
     {
-        // var jsonData = JSON.parse(response);
         var jsonData = JSON.parse(JSON.stringify(response));
-        // user is logged in successfully in the back-end
-        // let's redirect
         if (jsonData.success == "1")
         {
-            document.getElementById('bloquearMDL').hidden = true;
-        }
+        
+          // console.log(jsonData.error);
+          // console.log(video);
+
+          Swal.fire({
+            icon: 'success',
+            imageUrl: '../../img/logo_consejo_04.png',
+            imageHeight: 200,
+            title: 'Video cargado',
+            text: 'Proceso correcto',
+            confirmButtonColor: '#3085d6',
+            footer: 'INJUVENTUD'
+        });
+      }
+
     }
 });
+
+}
+
+// <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" onclick="window.location.reload();">Guardar</button>
+
+function editVideo(){
 
 }

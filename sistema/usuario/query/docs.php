@@ -68,10 +68,18 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
                 
             }
             else{
+              if($rowQuery['id']==9){
+                echo'
+            <a href="#" class="card-link text-light h6" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#editarVideo'.$rowQuery['id'].'"><i class="bi bi-pencil-square"></i> Editar video</a>
+            <a href="'.$rowDocs['link'].'" target="_blank" class="card-link text-light h6" style="text-decoration: none"><i class="bi bi-eye"></i> Visualizar video</a>
+            ';
+            }
+              else{
                 echo'
             <a href="#" class="card-link text-light h6" style="text-decoration: none" data-bs-toggle="modal" data-bs-target="#editarDoc'.$rowQuery['id'].'"><i class="bi bi-pencil-square"></i> Editar</a>
             <a href="../'.$rowDocs['link'].'" target="_blank" class="card-link text-light h6" style="text-decoration: none"><i class="bi bi-eye"></i> Visualizar</a>
             ';
+            }
             }
             echo'
             </div>
@@ -103,6 +111,7 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
             </div>
           </div>
         </div>
+
         <!-- Modal editar file -->
         <div class="modal fade" id="editarDoc'.$rowQuery['id'].'" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
           <div class="modal-dialog">
@@ -138,20 +147,49 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="window.location.reload();"></button>
               </div>
               <div class="modal-body">
-                <form id="upload_form" enctype="multipart/form-data" method="post">';
+                <form id="upload_form" terget="#">';
                 ?>
 
                   <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-youtube text-danger"></i></span>
-                    <input type="text" class="form-control" placeholder="Link de video" aria-label="Username" aria-describedby="basic-addon1" name="file<?php echo $idDoc?>" id="file<?php echo $idDoc?>" onchange="uploadFile(<?php echo $idDoc ?>,<?php echo $id ?>)">
+                    <input type="text" class="form-control" placeholder="Link de video" aria-label="Username" aria-describedby="basic-addon1" name="file<?php echo $idDoc?>" id="fileVideo<?php echo $idDoc?>" required>
                   </div>
                   <br>
                 <?php
                 echo'
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="window.location.reload();">Cerrar</button>
-                <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" onclick="window.location.reload();">Guardar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="uploadVideo('.$idDoc.','.$id.')">Guardar</button>
+              </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal editar video -->
+        <div class="modal fade" id="editarVideo'.$rowQuery['id'].'" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Editar <strong>'.$rowQuery['documento'].'</strong></h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="window.location.reload();"></button>
+              </div>
+              <div class="modal-body">
+                <form id="upload_form" terget="#">';
+                ?>
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-youtube text-danger"></i></span>
+                    <input type="text" class="form-control" placeholder="Link de video" aria-label="Username" aria-describedby="basic-addon1" name="file<?php echo $idDoc?>" id="editVideo<?php echo $idDoc?>" value="<?php echo $rowDocs['link']?>" required>
+                  </div>
+                  <br>
+                <?php
+                echo'
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="editVideo('.$idDoc.','.$id.')">Guardar</button>
               </div>
               </form>
             </div>
