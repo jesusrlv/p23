@@ -10,26 +10,15 @@
     $fecha_sistema = strftime("%Y-%m-%d,%H:%M:%S");
     $link= $_POST['video'];
 
-    $sqlInsert= "INSERT INTO documentos (documento,id_ext,link,fecha) 
-    VALUES('$doc','$idUsr','$link','$fecha_sistema')";
-    $resultado= $conn->query($sqlInsert);
+    $query = "UPDATE documentos SET link = '$link', fecha = '$fecha_sistema' WHERE id_ext = '$idUsr' AND documento = '$doc'";
+    $resultado= $conn->query($query);
     
 if ($resultado){
-    echo'
-    <script>
-    console.log("Registro de video exitoso");
-    </script>
-    ';
-
+    echo json_encode(array('success' => 1));
 }   
 else {
-    echo'
-    <script>
-    console.log("Registro de video no exitoso");
-    </script>
-    ';
-$error = $conn->error;
-echo json_encode(array('error'=>$error));
+    $error = $conn->error;
+    echo json_encode(array('error'=>$error));
 }
     
 ?>

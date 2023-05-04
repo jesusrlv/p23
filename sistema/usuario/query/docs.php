@@ -189,7 +189,7 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
               </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" onclick="editVideo('.$idDoc.','.$id.')" data-bs-dismiss="modal">Guardar</button>
+                <button type="button" class="btn btn-primary" onclick="editVideo('.$idDoc.','.$id.')" data-bs-dismiss="modal">Editar</button>
               </div>
               </form>
             </div>

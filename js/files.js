@@ -147,6 +147,52 @@ function uploadVideo(idDoc,idUsr){
 
 // <button type="submit" class="btn btn-primary" data-bs-dismiss="modal" onclick="window.location.reload();">Guardar</button>
 
-function editVideo(){
+function editVideo(idDoc,idUsr){
+
+    var video = document.getElementById('editVideo'+idDoc).value;
+    var idD = idDoc;
+    var idU = idUsr;
+
+    $.ajax({
+      type: "POST",
+      url: 'prcd/edit_video.php',
+      dataType:'json',
+      data:{
+          idD:idD,
+          idU:idU,
+          video:video
+      },
+      success: function(response)
+      {
+          var jsonData = JSON.parse(JSON.stringify(response));
+          var successVideo = jsonData.success;
+          if (successVideo == "1"){
+  
+            Swal.fire({
+              icon: 'success',
+              imageUrl: '../../img/PEJ23.png',
+              imageHeight: 200,
+              title: 'Video actualizado',
+              text: 'Proceso correcto',
+              confirmButtonColor: '#3085d6',
+              footer: 'INJUVENTUD'
+  
+          });
+        }
+        else{
+            Swal.fire({
+              icon: 'error',
+              imageUrl: '../../img/PEJ23.png',
+              imageHeight: 200,
+              title: 'Video no actualizado',
+              text: 'Proceso incorrecto',
+              confirmButtonColor: '#3085d6',
+              footer: 'INJUVENTUD'
+
+          });
+        }
+  
+      }
+  });
 
 }

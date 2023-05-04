@@ -16,13 +16,6 @@
     
 if ($resultado){
     echo json_encode(array('success' => 1));
-    // echo'
-    // <script>
-    // console.log("Registro de video exitoso");
-    // </script>
-    // ';
-    
-
 }   
 else {
     echo'
