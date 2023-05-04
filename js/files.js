@@ -196,3 +196,17 @@ function editVideo(idDoc,idUsr){
   });
 
 }
+
+function contador(){
+  var cont = document.getElementById('contarDocs').value;
+
+  if(cont == 0){
+    alert ("No tienes documentos");
+  }
+  else if(cont >= 0 & cont < 9){
+    alert ("Te faltan documentos");
+  }
+  else if(cont == 9){
+    alert ("Terminaste");
+  }
+}

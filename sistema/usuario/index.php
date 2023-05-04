@@ -42,6 +42,20 @@ $perfil = $_SESSION['perfil'];
       body{
         font-family: 'Montserrat', sans-serif;
       }
+      #colorRounded{
+        background-color: rgba(184, 11, 4, 0.8);
+      }
+      #imgPortrait{
+        background-image: url('../../img/fondo_pej2023.png');
+
+        object-fit: cover;
+        background-position: 80% 100%; /* Center the image */
+        background-repeat: repeat;
+        background-size: 100% auto; /* Resize the background image to cover the entire container */
+        background-position: center;
+        width:100%; 
+        height:100%;
+      }
 
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -117,12 +131,28 @@ $perfil = $_SESSION['perfil'];
           transform: scale(1.03);
           transition: width 0.3s, height 0.3s, transform 0.3s;
         }
+        #imgPortrait{
+
+        object-fit: cover;
+        background-repeat: no-repeat;
+        background-size: 350% 18%; /* Resize the background image to cover the entire container */
+        background-position: 0 0;
+        
+       
+        }
+        #colorRounded{
+          background-color: rgba(184, 11, 4, 0.5);
+          border-radius:0px;
+        }
+        #textPortada{
+          font-size:8px;
+        }
       }
     </style>
 
     
   </head>
-  <body>
+  <body onload="contador()">
     
 <header>
 <span id="inicio"></span>
@@ -130,20 +160,21 @@ $perfil = $_SESSION['perfil'];
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
         <img src="../../img/logo_injuventud_0.png" width="20" alt="" class="me-1">
-        <strong>POSTULANTE | PREMIO ESTATAL DE LA JUVENTUD 2023</strong>
+        <strong id="textPortada">POSTULANTE | PREMIO ESTATAL DE LA JUVENTUD 2023</strong>
       </a>
       <a href="prcd/sort.php" type="button" class="btn btn-sm btn-outline-light"><i class="bi bi-door-open"></i> Salir</a>
     </div>
   </div>
 </header>
 
-<main style="background-image: url('../../img/fondo_prueba.jpg');background-position: center;background-repeat: no-repeat;background-size: cover; width:100%; height:100%;">
+<!-- <main style="background-image: url('../../img/fondo_prueba.jpg');background-position: center;background-repeat: no-repeat;background-size: cover; width:100%; height:100%;" id="imgPortrait"> -->
+<main id="imgPortrait">
 
   <!-- <section class="py-5 text-center container"> -->
   <section class="text-center container">
     <!-- <div class="row py-lg-5"  style="background-image: url('../../img/logo_consejo_05.png')"> -->
     <div class="row py-lg-5"  >
-      <div class="col-lg-6 col-md-8 mx-auto rounded p-2" style="background-color: rgba(184, 11, 4, 0.8); ">
+      <div class="col-lg-6 col-md-8 mx-auto rounded p-2" id="colorRounded">
         <h1 class="fw-light"><img src="../../img/PEJ23.png" alt="" width="360"></h1>
         <h2 class="fw-bold" style="color:white">Bienvenido</h2>
         <h2 class="fw-bold" style="color:white"><i class="bi bi-person-circle"></i></h2>
