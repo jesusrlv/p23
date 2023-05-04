@@ -36,14 +36,14 @@ if($no_resultados == 1){
         $mail->Port = 587;                                    // TCP port to connect to 587 465
         
             //Recipients
-            $mail->setFrom('injuventud@zacatecas.gob.mx', 'CONSEJO JUVENIL - INJUVENTUD');
+            $mail->setFrom('injuventud@zacatecas.gob.mx', 'PREMIO ESTATAL DE LA JUVENTUD 2023 - INJUVENTUD');
             $mail->addAddress($email, $nombre);     // Add a recipient
         
             // Content
             $mail->isHTML(true);
             $mail->CharSet = 'UTF-8';                                  // Set email format to HTML
             $mail->Subject = 'Recuperar credenciales';
-            $mail->Body    = '<p>El presente correo es para recuperar tus credenciales de acceso al sistema del Consejo Juvenil del Estado de Zacatecas.</p>
+            $mail->Body    = '<p>El presente correo es para recuperar tus credenciales de acceso al sistema del Premio Estatal de la Juventud 2023.</p>
             
             <p>Usuario: '.$email.'</p>
             <p>Contraseña: '.$pwd.'</p>
@@ -57,7 +57,7 @@ if($no_resultados == 1){
             if($mail->send){
                 echo'
                 <script>
-                    alert("Se envío el correo");
+                    alert("Se envío un correo con tus datos de acceso");
                 </script>
                 ';
                 header("Location: ../index.html");
@@ -79,12 +79,16 @@ if($no_resultados == 1){
     
 }
 else{
-    echo'
-    <script>
-    alert("No se envió correo");
-    </script>';
+    $error = $conn->error;
+echo $error;
+//     echo'
+//     <script>
+//     alert("No se envió correo");
+//     </script>';
 
-}
+ }
+
+
 
 
 ?>

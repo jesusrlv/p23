@@ -58,14 +58,14 @@ require('conn/qc.php');
         $mail->Port = 587;                                    // TCP port to connect to 587 465
         
             //Recipients
-            $mail->setFrom('injuventud@zacatecas.gob.mx', 'CONSEJO JUVENIL - INJUVENTUD');
+            $mail->setFrom('injuventud@zacatecas.gob.mx', 'PREMIO ESTATAL DE LA JUVENTUD 2023 - INJUVENTUD');
             $mail->addAddress($email, $nombre);     // Add a recipient
         
             // Content
             $mail->isHTML(true);
             $mail->CharSet = 'UTF-8';                                  // Set email format to HTML
             $mail->Subject = 'Registro exitoso';
-            $mail->Body    = '<p>Te has registrado exitosamente a la plataforma del Consejo Juvenil del Estado de Zacatecas.</p>
+            $mail->Body    = '<p>Te has registrado exitosamente a la plataforma del Premio Estatal de la Juventud 2023.</p>
             
             <p><strong>Usuario:</strong> '.$email.'</p>
            
