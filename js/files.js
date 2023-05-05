@@ -218,7 +218,7 @@ function contador(){
 
   });
   }
-  else if(cont >= 0 & cont < 9){
+  else if(cont >= 0 & cont < 11){
     Swal.fire({
       icon: 'warning',
       imageUrl: '../../img/logo_injuventud_01.png',
@@ -230,7 +230,7 @@ function contador(){
 
     });
   }
-  else if(cont == 9){
+  else if(cont == 11){
 
     document.getElementById('constanciaP').hidden=false;
 

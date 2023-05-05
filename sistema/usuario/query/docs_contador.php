@@ -33,7 +33,7 @@ $noCatalogoquery = mysqli_num_rows($resultadoQuery);
             </div>
         ';
         }
-        else if($no_resultados == 1 || $no_resultados == 2 || $no_resultados == 3 || $no_resultados == 4 || $no_resultados == 5 || $no_resultados == 6 || $no_resultados == 7 || $no_resultados == 8 ){
+        else if($no_resultados == 1 || $no_resultados == 2 || $no_resultados == 3 || $no_resultados == 4 || $no_resultados == 5 || $no_resultados == 6 || $no_resultados == 7 || $no_resultados == 8|| $no_resultados == 9 || $no_resultados == 10 ){
             echo '
             <div class="col">
                 <div class="card border-primary bg-warning" style="height:300px;background-color:rgba 255, 193, 7, 0.1);">
@@ -50,7 +50,7 @@ $noCatalogoquery = mysqli_num_rows($resultadoQuery);
             </div>
             ';
         }
-        else if($no_resultados == 9){
+        else if($no_resultados == 11){
             echo '
             <div class="col">
                 <div class="card border-success" style="height:300px; background-color:rgba(117, 183, 152, 0.9);">
