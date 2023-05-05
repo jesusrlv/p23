@@ -224,12 +224,12 @@ $perfil = $_SESSION['perfil'];
             <div class="card-body">
               <h5 class="card-title">Convocatoria</h5>
               <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-exclamation-triangle-fill text-warning"></i> Convocatoria vigente</h6>
-              <p class="card-text">Convocatoria vigente acerca de la postulación al Consejo Juvenil 2023.</p>
-              <p><a href="https://docs.google.com/document/d/1RzrM_XVMFHdyl077Tr-f3MDMfIl-CofL/edit?usp=sharing&ouid=110177786885321579068&rtpof=true&sd=true" target="_blank">Cartas (documentos)</a></p>
+              <p class="card-text">Convocatoria vigente acerca de la postulación al Premio Estatal de la Juventud 2023.</p>
+              <p><a href="#" target="_blank" style="text-decoration:none" class="btn btn-primary" id="constanciaP" hidden> <i class="bi bi-file-earmark-richtext"></i> Constancia de participación al PEJ2023</a></p>
               
             </div>
             <div class="card-footer">
-              <a href="../../convocatoria/convocatoria_consejo_juvenil_2023.pdf" target="_blank" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
+              <a href="https://juventud.zacatecas.gob.mx/docs/convocatoria_premio_2023.pdf" target="_blank" class="card-link" style="text-decoration: none"><i class="bi bi-eye"></i> Revisar</a>
             </div>
           </div>
         </div>

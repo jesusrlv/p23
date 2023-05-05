@@ -147,7 +147,7 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="window.location.reload();"></button>
               </div>
               <div class="modal-body">
-                <form id="upload_form" terget="#">';
+                <form id="upload_form">';
                 ?>
 
                   <div class="input-group mb-3">
@@ -159,8 +159,8 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
                 echo'
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" onclick="uploadVideo('.$idDoc.','.$id.')">Guardar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="window.location.reload();">Cerrar</button>
+                <button id="btnGuardar'.$idDoc.'" type="button" class="btn btn-primary" onclick="uploadVideo('.$idDoc.','.$id.')">Guardar</button>
               </div>
               </form>
             </div>
@@ -188,8 +188,8 @@ while($rowQuery = $resultadoQuery ->fetch_assoc()){
                 echo'
               </div>
               <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                <button type="button" class="btn btn-primary" onclick="editVideo('.$idDoc.','.$id.')" data-bs-dismiss="modal">Editar</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" onclick="window.location.reload();">Cerrar</button>
+                <button type="button" class="btn btn-primary" onclick="editVideo('.$idDoc.','.$id.')" id="btnEditar'.$idDoc.'">Editar</button>
               </div>
               </form>
             </div>

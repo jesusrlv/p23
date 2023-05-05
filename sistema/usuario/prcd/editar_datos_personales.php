@@ -27,7 +27,7 @@ if($resultado){
     echo "<script type=\"text/javascript\">
     Swal.fire({
         icon: 'success',
-        imageUrl: '../../../img/logo_consejo_04.png',
+        imageUrl: '../../../img/logo_injuventud_01.png',
         imageHeight: 200,
         imageAlt: 'Gobierno del estado de Zacatecas',
         title: 'Datos actualizados',
@@ -41,7 +41,7 @@ else{
     <script type=\"text/javascript\">
     Swal.fire({
         icon: 'error',
-        imageUrl: '../../../img/logo_consejo_04.png',
+        imageUrl: '../../../img/logo_injuventud_01.png',
         imageHeight: 200,
         imageAlt: 'Gobierno del estado de Zacatecas',
         title: 'No se actualizaron los datos',

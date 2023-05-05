@@ -124,6 +124,9 @@ function uploadVideo(idDoc,idUsr){
     },
     success: function(response)
     {
+        document.getElementById('fileVideo'+idDoc).disabled=true;
+        document.getElementById('btnGuardar'+idDoc).disabled=true;
+
         var jsonData = JSON.parse(JSON.stringify(response));
         var successVideo = jsonData.success;
         if (successVideo == "1"){
@@ -164,6 +167,9 @@ function editVideo(idDoc,idUsr){
       },
       success: function(response)
       {
+          document.getElementById('editVideo'+idDoc).disabled=true;
+          document.getElementById('btnEditar'+idDoc).disabled=true;
+
           var jsonData = JSON.parse(JSON.stringify(response));
           var successVideo = jsonData.success;
           if (successVideo == "1"){
@@ -201,12 +207,42 @@ function contador(){
   var cont = document.getElementById('contarDocs').value;
 
   if(cont == 0){
-    alert ("No tienes documentos");
+    Swal.fire({
+      icon: 'info',
+      imageUrl: '../../img/logo_injuventud_01.png',
+      imageHeight: 200,
+      title: 'Bienvenido al sistema de postulación al PEJ2023',
+      text: 'No has cargado documentos para postularte al PEJ2023, comienza a subir tus documentos.',
+      confirmButtonColor: '#3085d6',
+      footer: 'INJUVENTUD'
+
+  });
   }
   else if(cont >= 0 & cont < 9){
-    alert ("Te faltan documentos");
+    Swal.fire({
+      icon: 'warning',
+      imageUrl: '../../img/logo_injuventud_01.png',
+      imageHeight: 200,
+      title: 'Proceso incompleto',
+      text: 'Has cargado '+cont+' documento(s) para postularte al PEJ2023.',
+      confirmButtonColor: '#3085d6',
+      footer: 'INJUVENTUD'
+
+    });
   }
   else if(cont == 9){
-    alert ("Terminaste");
+
+    document.getElementById('constanciaP').hidden=false;
+
+    Swal.fire({
+      icon: 'success',
+      imageUrl: '../../img/logo_injuventud_01.png',
+      imageHeight: 200,
+      title: 'Proceso finalizado',
+      text: 'Has cargado los 9 documentos para postularte al PEJ2023. Ya puedes descargar la constancia de participación en la sección de Convocatoria.',
+      confirmButtonColor: '#3085d6',
+      footer: 'INJUVENTUD'
+
+  });
   }
 }
