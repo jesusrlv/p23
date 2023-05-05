@@ -133,7 +133,7 @@ function uploadVideo(idDoc,idUsr){
 
           Swal.fire({
             icon: 'success',
-            imageUrl: '../../img/PEJ23.png',
+            imageUrl: '../../img/logo_injuventud_01.png',
             imageHeight: 200,
             title: 'Video cargado',
             text: 'Proceso correcto',
@@ -176,7 +176,7 @@ function editVideo(idDoc,idUsr){
   
             Swal.fire({
               icon: 'success',
-              imageUrl: '../../img/PEJ23.png',
+              imageUrl: '../../img/logo_injuventud_01.png',
               imageHeight: 200,
               title: 'Video actualizado',
               text: 'Proceso correcto',
@@ -188,7 +188,7 @@ function editVideo(idDoc,idUsr){
         else{
             Swal.fire({
               icon: 'error',
-              imageUrl: '../../img/PEJ23.png',
+              imageUrl: '../../img/logo_injuventud_01.png',
               imageHeight: 200,
               title: 'Video no actualizado',
               text: 'Proceso incorrecto',
@@ -224,7 +224,7 @@ function contador(){
       imageUrl: '../../img/logo_injuventud_01.png',
       imageHeight: 200,
       title: 'Proceso incompleto',
-      text: 'Has cargado '+cont+' documento(s) para postularte al PEJ2023.',
+      html: 'Has cargado <b>'+cont+'</b> documento(s) para postularte al PEJ2023.',
       confirmButtonColor: '#3085d6',
       footer: 'INJUVENTUD'
 
@@ -239,7 +239,7 @@ function contador(){
       imageUrl: '../../img/logo_injuventud_01.png',
       imageHeight: 200,
       title: 'Proceso finalizado',
-      text: 'Has cargado los 9 documentos para postularte al PEJ2023. Ya puedes descargar la constancia de participación en la sección de Convocatoria.',
+      html: 'Has cargado los <strong>9 documentos</strong> para postularte al PEJ2023. Ya puedes descargar la constancia de participación en la sección de Convocatoria.',
       confirmButtonColor: '#3085d6',
       footer: 'INJUVENTUD'
 
