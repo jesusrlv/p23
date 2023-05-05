@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 28-04-2023 a las 17:26:58
+-- Tiempo de generación: 05-05-2023 a las 16:53:49
 -- Versión del servidor: 10.5.6-MariaDB
 -- Versión de PHP: 7.1.33
 
@@ -251,7 +251,7 @@ CREATE TABLE IF NOT EXISTS `usr` (
 --
 
 INSERT INTO `usr` (`id`, `usr`, `pwd`, `perfil`, `curp`, `nombre`, `edad`, `municipio`, `telefono`, `categoria`) VALUES
-(1, 'usr1', '123456789', 1, 'LEVJ810924HZSXLS04', '', 0, 1, 0, 0),
+(1, 'usr1', '123456789', 1, 'LEVJ810924HZSXLS04', 'Jesús rlv', 0, 56, 0, 0),
 (2, 'usr2', '123456789', 1, 'LEVJ810924HZSXLS05', '', 0, 2, 0, 0),
 (3, 'usr3', '123456789', 1, 'LEVJ810924HZSXLS06', 'Jesus R', 45, 4, 0, 0),
 (4, 'admin', '123456789', 2, 'LEVJ', '', 0, 45, 0, 0),
