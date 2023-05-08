@@ -10,6 +10,12 @@
     $resultadoMunicipio = $conn -> query($sqlMunicipio);
     $rowMunicipio = $resultadoMunicipio -> fetch_assoc();
 
+    $categoria = $rowVisualizar['categoria'];
+
+    $sqlCategoria ="SELECT * FROM categorias WHERE id = '$categoria'";
+    $resultadoCategoria = $conn -> query($sqlCategoria);
+    $rowCategoria = $resultadoCategoria -> fetch_assoc();
+
     echo'
     <!-- Modal visualizar-->
     <div class="modal fade" id="modalVisualizar"  data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -33,7 +39,7 @@
                     <i class="bi bi-bookmarks"></i>
                     </div>
                     <div class="alert alert-light w-75 border" role="alert">
-                            <strong>Categoría: </strong>'.$rowVisualizar['categoria'].'
+                            <strong>Categoría: </strong>'.$rowCategoria['nombre'].'
                     </div>
                 </div>
                 <div class="input-group mb-1">

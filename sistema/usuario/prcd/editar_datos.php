@@ -5,10 +5,15 @@
     $resultadoVisualizar = $conn -> query($sqlVisualizar);
     $rowVisualizar = $resultadoVisualizar -> fetch_assoc();
     $municipio = $rowVisualizar['municipio'];
+    $categoria = $rowVisualizar['categoria'];
 
     $sqlMunicipio ="SELECT * FROM municipio WHERE id = '$municipio'";
     $resultadoMunicipio = $conn -> query($sqlMunicipio);
     $rowMunicipio = $resultadoMunicipio -> fetch_assoc();
+
+    $sqlCategoria ="SELECT * FROM categorias WHERE id = '$categoria'";
+    $resultadoCategoria = $conn -> query($sqlCategoria);
+    $rowCategoria = $resultadoCategoria -> fetch_assoc();
 
     $sqlMunicipio2 ="SELECT * FROM municipio";
     $resultadoMunicipio2 = $conn -> query($sqlMunicipio2);
@@ -33,6 +38,10 @@
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-circle"></i></span>
                     <input type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1" value="'.$rowVisualizar['usr'].'" name="usr" disabled>
+                </div>
+                <div class="input-group mb-3">
+                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-bookmarks"></i></span>
+                    <input type="text" class="form-control" placeholder="Usuario" aria-label="Usuario" aria-describedby="basic-addon1" value="'.$rowCategoria['nombre'].'" name="usr" disabled>
                 </div>
                 <div class="input-group mb-3">
                     <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-vcard"></i></span>
