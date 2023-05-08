@@ -5,6 +5,7 @@ $id = $_SESSION['id'];
 $usr = $_SESSION['usr'];
 $nombre = $_SESSION['nombre'];
 $perfil = $_SESSION['perfil'];
+$categoria = $_SESSION['categoria'];
 
 ?>
 <!doctype html>
@@ -152,7 +153,7 @@ $perfil = $_SESSION['perfil'];
 
     
   </head>
-  <body onload="contador()">
+  <body onload="contador();categoriaCompleta();">
     
 <header>
 <span id="inicio"></span>
@@ -179,6 +180,9 @@ $perfil = $_SESSION['perfil'];
         <h2 class="fw-bold" style="color:white">Bienvenido</h2>
         <h2 class="fw-bold" style="color:white"><i class="bi bi-person-circle"></i></h2>
         <h2 class="fw-bold" style="color:white"><?php echo $nombre ?></h2>
+        <?php echo '<input type="text" value="'.$categoria.'" id="catCompleto" hidden>' ?>
+        <h5 class="fw-bold" style="color:white">Categoría: <output id="categoriaOut"></h5>
+        <p id="resultSpan"></p>
         <p class="lead text-light mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
           <hr class="text-secondary">

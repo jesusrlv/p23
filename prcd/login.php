@@ -15,6 +15,7 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
             $_SESSION['perfil'] = $row_sql['perfil'];
             $_SESSION['id'] = $row_sql['id'];
             $_SESSION['nombre'] = $row_sql['nombre'];
+            $_SESSION['categoria'] = $row_sql['categoria'];
 
             echo json_encode(array('success' => 1));
         }
@@ -24,6 +25,8 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
             $_SESSION['perfil'] = $row_sql['perfil'];
             $_SESSION['id'] = $row_sql['id'];
             $_SESSION['nombre'] = $row_sql['nombre'];
+            $_SESSION['categoria'] = $row_sql['categoria'];
+
 
             echo json_encode(array('success' => 2));
         }
@@ -33,6 +36,8 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
             $_SESSION['perfil'] = $row_sql['perfil'];
             $_SESSION['id'] = $row_sql['id'];
             $_SESSION['nombre'] = $row_sql['nombre'];
+            $_SESSION['categoria'] = $row_sql['categoria'];
+
 
             echo json_encode(array('success' => 3));
         }
@@ -42,6 +47,8 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
             $_SESSION['perfil'] = $row_sql['perfil'];
             $_SESSION['id'] = $row_sql['id'];
             $_SESSION['nombre'] = $row_sql['nombre'];
+            $_SESSION['categoria'] = $row_sql['categoria'];
+
 
             echo json_encode(array('success' => 4));
         }

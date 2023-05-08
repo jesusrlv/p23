@@ -246,3 +246,29 @@ function contador(){
   });
   }
 }
+
+function categoriaCompleta(){
+  var categoria = document.getElementById('catCompleto').value;
+  console.log(categoria+'este este el valor')
+  $.ajax({
+    type: "POST",
+    url: 'query/categoria_titulo.php',
+    dataType:'json',
+    data:{
+        categoria:categoria
+    },
+    success: function(data)
+    {
+      
+      var jsonData = JSON.parse(JSON.stringify(data));
+      // var successCategoria = jsonData.cat;
+      console.log(jsonData.cat);
+
+      let elemento = document.getElementById('categoriaOut');
+      elemento.value = jsonData.cat;
+      // $('#resultSpan').html(data);
+    }
+
+  });
+
+}
