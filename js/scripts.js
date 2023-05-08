@@ -293,8 +293,8 @@ $(document).ready(function() {
                 }
                 else
                 {
-                    console.log(jsonData.error)
-                    // alert('Invalid Credentials!');
+                    console.log(jsonData.error);
+                    alert(jsonData.error);
                     Swal.fire({
                         icon: 'error',
                         title: 'Datos incorrectos',
