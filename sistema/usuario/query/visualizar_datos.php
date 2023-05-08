@@ -30,6 +30,14 @@
                 </div>
                 <div class="input-group mb-1">
                     <div class="alert alert-secondary w-25 border text-center" role="alert">
+                    <i class="bi bi-bookmarks"></i>
+                    </div>
+                    <div class="alert alert-light w-75 border" role="alert">
+                            <strong>Categoría: </strong>'.$rowVisualizar['categoria'].'
+                    </div>
+                </div>
+                <div class="input-group mb-1">
+                    <div class="alert alert-secondary w-25 border text-center" role="alert">
                     <i class="bi bi-person-bounding-box"></i>
                     </div>
                     <div class="alert alert-light w-75 border" role="alert">
