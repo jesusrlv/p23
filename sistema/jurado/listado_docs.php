@@ -194,15 +194,14 @@ include('query/name.php');
     </div>
   </section>
 
-  <div class="album py-5 bg-light">
+  <div class="album py-5 bg-light mb-0">
     <div class="container">
       <div class="d-grid gap-2">
-          <a href="index.php" class="btn btn-primary" type="button"><i class="bi bi-arrow-bar-left"></i> Regresar lista principal</a>
-        </div> 
+        <a href="index.php" class="btn btn-outline-primary" type="button"><i class="bi bi-arrow-bar-left"></i> Regresar lista principal</a>
+      </div> 
     </div>
   </div>
   
-
   <div class="album py-5 bg-light">
     <div class="container">
        
@@ -233,6 +232,9 @@ include('query/name.php');
         </table>
 
       </div><!-- row -->
+      <div class="d-grid gap-2 mt-5">
+        <a href="index.php" class="btn btn-outline-primary" type="button"><i class="bi bi-arrow-bar-left"></i> Regresar lista principal</a>
+      </div> 
     </div>
   </div>
 
