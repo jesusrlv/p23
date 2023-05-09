@@ -194,18 +194,21 @@ include('query/name.php');
     </div>
   </section>
 
-  <div class="album py-5 bg-light mb-0">
+  <!-- <div class="album py-5 bg-light mb-0">
     <div class="container">
       <div class="d-grid gap-2">
         <a href="index.php" class="btn btn-outline-primary" type="button"><i class="bi bi-arrow-bar-left"></i> Regresar lista principal</a>
       </div> 
     </div>
-  </div>
+  </div> -->
   
   <div class="album py-5 bg-light">
     <div class="container">
        
       <div class="mb-0">
+      <div class="d-grid gap-2">
+        <a href="index.php" class="btn btn-outline-primary" type="button"><i class="bi bi-arrow-bar-left"></i> Regresar lista principal</a>
+      </div> 
         <p><span id="seccion_convocatoria"></span>
           <p class="h2 text-secondary" ><i class="bi bi-file-earmark-post-fill"></i> Documentos | <a href="#inicio"><i class="bi bi-arrow-bar-up"></i></a></p></p>
         <p><small>POSTULANTE: <strong><?php echo $rowName['nombre']?></strong>.</small></p>
