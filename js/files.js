@@ -239,7 +239,7 @@ function contador(){
       imageUrl: '../../img/logo_injuventud_01.png',
       imageHeight: 200,
       title: 'Proceso finalizado',
-      html: 'Has cargado los <strong>9 documentos</strong> para postularte al PEJ2023. Ya puedes descargar la constancia de participación en la sección de Convocatoria.',
+      html: 'Has cargado los <strong>11 documentos</strong> para postularte al <strong>PEJ2023</strong>. Ya puedes descargar la constancia de participación en la sección de Convocatoria.',
       confirmButtonColor: '#3085d6',
       footer: 'INJUVENTUD'
 
