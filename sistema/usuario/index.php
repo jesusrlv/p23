@@ -229,7 +229,7 @@ $categoria = $_SESSION['categoria'];
               <h5 class="card-title">Convocatoria</h5>
               <h6 class="card-subtitle mb-2 text-muted"><i class="bi bi-exclamation-triangle-fill text-warning"></i> Convocatoria vigente</h6>
               <p class="card-text">Convocatoria vigente acerca de la postulación al Premio Estatal de la Juventud 2023.</p>
-              <p><a href="#" target="_blank" style="text-decoration:none" class="btn btn-primary" id="constanciaP" hidden> <i class="bi bi-file-earmark-richtext"></i> Constancia de participación al PEJ2023</a></p>
+              <p><a href="generador_constancia.php" target="_blank" style="text-decoration:none" class="btn btn-primary" id="constanciaP" hidden> <i class="bi bi-file-earmark-richtext"></i> Constancia de participación al PEJ2023</a></p>
               
             </div>
             <div class="card-footer">
@@ -263,11 +263,25 @@ $categoria = $_SESSION['categoria'];
 
 <footer class="text-light py-5" style="background:#b23933">
   <div class="container">
-    <p class="float-end mb-1">
-      <a href="#inicio"  style="text-decoration: none;" class="text-light"><i class="bi bi-arrow-bar-up"></i> Arriba</a>
-    </p>
-    <p class="mb-1">&copy; Desarrollo por <strong class="text-light">INJUVENTUD</strong></p>
-    <p class="mb-0"><a href="/" style="text-decoration: none;" class="text-light">Gobierno del estado de Zacatecas</a>.</p>
+    <div>
+      <div class="row">
+        <div class="col-sm-3 col-md-6 col-lg-4 mt-2">
+          <p class="mb-0 text-center"><img src="../../img/logo_white_02.png"  width="180" alt=""></p>
+          <p class="mb-0 mt-1 text-center"><small>&copy; Desarrollo:<br> <strong class="text-light">Tecnologías de la Información | INJUVENTUD</strong></small></p>
+          <!-- <p class="mb-0 text-center"><small><a href="/" style="text-decoration: none;" class="text-light">Gobierno del estado de Zacatecas</a>.</small></p> -->
+        </div>
+        <div class="col-sm-3 col-md-6 col-lg-4 mt-2 text-center">
+          <img src="../../img/logo_white_01.png" width="180" alt="">
+        </div>
+        <div class="col-sm-3 col-md-6 col-lg-4 mt-2">
+          <p class="float-end mb-1 text-center">
+            <a href="#inicio" style="text-decoration: none;" class="text-light"><i class="bi bi-arrow-bar-up"></i> Arriba</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    
   </div>
 </footer>
 

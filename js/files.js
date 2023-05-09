@@ -223,7 +223,7 @@ function contador(){
       icon: 'warning',
       imageUrl: '../../img/logo_injuventud_01.png',
       imageHeight: 200,
-      title: 'Proceso incompleto',
+      title: 'Tienes documentos pendientes por cargar',
       html: 'Has cargado <b>'+cont+'</b> documento(s) para postularte al PEJ2023.',
       confirmButtonColor: '#3085d6',
       footer: 'INJUVENTUD'
