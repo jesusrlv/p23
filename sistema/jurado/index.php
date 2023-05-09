@@ -5,6 +5,7 @@ $id = $_SESSION['id'];
 $usr = $_SESSION['usr'];
 $nombre = $_SESSION['nombre'];
 $perfil = $_SESSION['perfil'];
+$categoria = $_SESSION['categoria'];
 
 ?>
 <!doctype html>
@@ -16,7 +17,7 @@ $perfil = $_SESSION['perfil'];
     <meta name="INJUVENTUD" content="Consejo Juvenil">
     <meta name="" content="">
     <link rel="icon" type="image/png" href="../../img/icon.ico" sizes="22x21">
-    <title>Perfil Jurado | Consejo Juvenil</title>
+    <title>Perfil Jurado | PEJ2023</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/album/">
 
@@ -33,12 +34,27 @@ $perfil = $_SESSION['perfil'];
      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;400&display=swap" rel="stylesheet"> 
      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <link href="../../assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <style>
       body{
         font-family: 'Montserrat', sans-serif;
+      }
+      #colorRounded{
+        background-color: rgba(184, 11, 4, 0.8);
+      }
+      #imgPortrait{
+        background-image: url('../../img/fondo_pej2023.png');
+
+        object-fit: cover;
+        background-position: auto 100%; /* Center the image */
+        background-repeat: repeat;
+        background-size: 100% auto; /* Resize the background image to cover the entire container */
+        /* background-position: center; */
+        width:100%; 
+        height:100%;
       }
 
       .bd-placeholder-img {
@@ -115,48 +131,64 @@ $perfil = $_SESSION['perfil'];
           transform: scale(1.03);
           transition: width 0.3s, height 0.3s, transform 0.3s;
         }
+        #imgPortrait{
+
+        object-fit: cover;
+        background-repeat: no-repeat;
+        background-size: 350% 18%; /* Resize the background image to cover the entire container */
+        background-position: 0 0;
+        
+       
+        }
+        #colorRounded{
+          background-color: rgba(184, 11, 4, 0.5);
+          border-radius:0px;
+        }
+        #textPortada{
+          font-size:8px;
+        }
       }
     </style>
 
     
   </head>
-  <body>
+  <body onload="categoriaCompleta();">
     
 <header>
 <span id="inicio"></span>
-  <div class="navbar navbar-dark shadow-sm" style="background:#6002DE">
+  <div class="navbar navbar-dark shadow-sm" style="background:#ff9d07">
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
         <img src="../../img/logo_injuventud_0.png" width="20" alt="" class="me-1">
-        <strong>JURADO | Consejo Juvenil 2023</strong>
+        <strong>JURADO | PEJ 2023</strong>
       </a>
       <a href="prcd/sort.php" type="button" class="btn btn-sm btn-outline-light"><i class="bi bi-door-open"></i> Salir</a>
     </div>
   </div>
 </header>
 
-<main>
-
-  <!-- <section class="py-5 text-center container"> -->
+<main id="imgPortrait">
   <section class="text-center container">
     <!-- <div class="row py-lg-5"  style="background-image: url('../../img/logo_consejo_05.png')"> -->
-    <div class="row py-lg-5"  style="background-image: url('../../assets/img/background.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;width:100%;">
-      <div class="col-lg-6 col-md-8 mx-auto rounded bg-light bg-opacity-50 p-2">
-        <h1 class="fw-light"><img src="../../img/logo_consejo_04.png" alt="" width="360"></h1>
-        <h2 class="fw-bold" style="color:#5a5557">Bienvenido</h2>
-        <h2 class="fw-bold" style="color:#5a5557"><i class="bi bi-person-circle"></i></h2>
-        <h2 class="fw-bold" style="color:#5a5557"><?php echo $nombre ?></h2>
-        <p class="lead text-dark mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
+    <div class="row py-lg-5" >
+      <div class="col-lg-6 col-md-8 mx-auto rounded p-2" id="colorRounded">
+        <h1 class="fw-light"><img src="../../img/PEJ23.png" alt="" width="360"></h1>
+        <h2 class="fw-bold" style="color:white">Bienvenido</h2>
+        <h2 class="fw-bold" style="color:white"><i class="bi bi-person-circle"></i></h2>
+        <h2 class="fw-bold" style="color:white"><?php echo $nombre ?></h2>
+        <?php echo '<input type="text" value="'.$categoria.'" id="catCompleto" hidden>'?>
+        <h5 class="fw-bold" style="color:white">Mesa: <output id="categoriaOut"></h5>
+        <p id="resultSpan"></p>
+        <p class="lead text-light mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
         <p>
           <hr class="text-secondary">
           <a href="#seccion_convocatoria" class="btn btn-primary my-2"><i class="bi bi-clipboard-data-fill"></i> Dashboard</a>
-          <!-- <a href="#seccion_convocatoria" class="btn btn-secondary my-2"><i class="bi bi-file-earmark-break"></i> Sección convocatoria</a> -->
         </p>
       </div>
     </div>
   </section>
 
-  <div class="album py-5 bg-light">
+  <!-- <div class="album py-5 bg-light">
     <div class="container">
       <div class="mb-4">
         <p><span id="seccion_convocatoria"></span>
@@ -170,14 +202,15 @@ $perfil = $_SESSION['perfil'];
         <p><small>Dashboard<strong> postulantes</strong>.</small></p>
       </div>
       
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3"> -->
         
-        <?php include('query/docs_contador.php'); ?>
-        <?php include('query/docs_contador.php'); ?>
+        <?php //include('query/docs_contador.php'); ?>
+        <?php //include('query/docs_contador.php'); ?>
         
-      </div><!-- row -->
-    </div>
-  </div>
+      <!-- </div> -->
+      <!-- row -->
+    <!-- </div>
+  </div> -->
 
   <div class="album py-5 bg-light">
     <div class="container">
@@ -205,6 +238,7 @@ $perfil = $_SESSION['perfil'];
               <th scope="col">Municipio</th>
               <th scope="col">Teléfono</th>
               <th scope="col"># Documentos</th>
+              <th scope="col">Estatus</th>
             </tr>
           </thead>
           <tbody class="text-center" id="myTable">
@@ -222,11 +256,25 @@ $perfil = $_SESSION['perfil'];
 
 <footer class="text-light py-5" style="background:#b23933">
   <div class="container">
-    <p class="float-end mb-1">
-      <a href="#inicio"  style="text-decoration: none;" class="text-light"><i class="bi bi-arrow-bar-up"></i> Arriba</a>
-    </p>
-    <p class="mb-1">&copy; Desarrollo por <strong class="text-light">INJUVENTUD</strong></p>
-    <p class="mb-0"><a href="/" style="text-decoration: none;" class="text-light">Gobierno del estado de Zacatecas</a>.</p>
+    <div>
+      <div class="row">
+        <div class="col-sm-3 col-md-6 col-lg-4 mt-2">
+          <p class="mb-0 text-center"><img src="../../img/logo_white_02.png"  width="180" alt=""></p>
+          <p class="mb-0 mt-1 text-center"><small>&copy; Desarrollo:<br> <strong class="text-light">Tecnologías de la Información | INJUVENTUD</strong></small></p>
+          <!-- <p class="mb-0 text-center"><small><a href="/" style="text-decoration: none;" class="text-light">Gobierno del estado de Zacatecas</a>.</small></p> -->
+        </div>
+        <div class="col-sm-3 col-md-6 col-lg-4 mt-2 text-center">
+          <img src="../../img/logo_white_01.png" width="180" alt="">
+        </div>
+        <div class="col-sm-3 col-md-6 col-lg-4 mt-2">
+          <p class="float-end mb-1 text-center">
+            <a href="#inicio" style="text-decoration: none;" class="text-light"><i class="bi bi-arrow-bar-up"></i> Arriba</a>
+          </p>
+        </div>
+      </div>
+    </div>
+    
+    
   </div>
 </footer>
 

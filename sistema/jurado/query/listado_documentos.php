@@ -22,7 +22,7 @@ while($rowDocs = $resultadoDocs->fetch_assoc()){
         <td><a href="../'.$rowDocs['link'].'"><i class="bi bi-filetype-pdf h4"></i></a></td>
         <td>
         ';
-    if($rowDocs['documento']==1 || $rowDocs['documento']==9){
+    if($rowDocs['documento']==1 || $rowDocs['documento']==2 || $rowDocs['documento']==3 || $rowDocs['documento']==8 || $rowDocs['documento']==9){
         if(empty($rowCalif['calificacion'])){
 
         echo'
@@ -77,10 +77,39 @@ while($rowDocs = $resultadoDocs->fetch_assoc()){
         <td>
             <span id="calificacionActual'.$rowDocs['documento'].'">';
                 if($rowDocs['documento']==1){
-                    // $idCon = $rowDocs['documento'];
-                    // $idExtCon = $rowDocs['id_ext'];
-                    // $jurado = $_SESSION['id'];
-                    // $docCon = "SELECT * FROM calificacion WHERE documento = 1 AND id_ext = '$idExtCon' AND id_jurado = '$jurado'";
+                    $resultadoCon = $conn->query($calif);
+                    $rowCon = $resultadoCon->fetch_assoc();
+                    if(empty($rowCon['calificacion'])){
+                        echo 'Sin calificar';
+                    }
+                    else{
+                    echo $rowCon['calificacion'];
+                    }
+
+                }
+                else if($rowDocs['documento']==2){
+                    $resultadoCon = $conn->query($calif);
+                    $rowCon = $resultadoCon->fetch_assoc();
+                    if(empty($rowCon['calificacion'])){
+                        echo 'Sin calificar';
+                    }
+                    else{
+                    echo $rowCon['calificacion'];
+                    }
+
+                }
+                else if($rowDocs['documento']==3){
+                    $resultadoCon = $conn->query($calif);
+                    $rowCon = $resultadoCon->fetch_assoc();
+                    if(empty($rowCon['calificacion'])){
+                        echo 'Sin calificar';
+                    }
+                    else{
+                    echo $rowCon['calificacion'];
+                    }
+
+                }
+                else if($rowDocs['documento']==8){
                     $resultadoCon = $conn->query($calif);
                     $rowCon = $resultadoCon->fetch_assoc();
                     if(empty($rowCon['calificacion'])){
@@ -92,11 +121,7 @@ while($rowDocs = $resultadoDocs->fetch_assoc()){
 
                 }
                 else if($rowDocs['documento']==9){
-                    $idCon = $rowDocs['documento'];
-                    $idExtCon = $rowDocs['id_ext'];
-                    $jurado = $_SESSION['id'];
-                    $docCon = "SELECT * FROM calificacion WHERE documento = 9 AND id_ext = '$idExtCon' AND id_jurado = '$jurado'";
-                    $resultadoCon = $conn->query($docCon);
+                    $resultadoCon = $conn->query($calif);
                     $rowCon = $resultadoCon->fetch_assoc();
                     if(empty($rowCon['calificacion'])){
                         echo 'Sin calificar';
@@ -104,12 +129,35 @@ while($rowDocs = $resultadoDocs->fetch_assoc()){
                     else{
                     echo $rowCon['calificacion'];
                     }
+
                 }
+                // else if($rowDocs['documento']==9){
+                //     $idCon = $rowDocs['documento'];
+                //     $idExtCon = $rowDocs['id_ext'];
+                //     $jurado = $_SESSION['id'];
+                //     $docCon = "SELECT * FROM calificacion WHERE documento = 9 AND id_ext = '$idExtCon' AND id_jurado = '$jurado'";
+                //     $resultadoCon = $conn->query($docCon);
+                //     $rowCon = $resultadoCon->fetch_assoc();
+                //     if(empty($rowCon['calificacion'])){
+                //         echo 'Sin calificar';
+                //     }
+                //     else{
+                //     echo $rowCon['calificacion'];
+                //     }
+                // }
                 else{
                     echo '---';
                 }
             echo'
             </span>
+        </td>
+        ';
+    }
+    else{
+        echo '---';
+        echo '
+        <td>
+        ---
         </td>
         ';
     }
