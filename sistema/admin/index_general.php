@@ -198,7 +198,7 @@ $perfil = $_SESSION['perfil'];
       <div class="mb-4">
         <p><span id="seccion_MX"></span>
           <p class="h2">
-          <i class="bi bi-flag-fill text-success"></i> Postulantes Mx | 
+          <i class="bi bi-flag-fill text-success"></i> Postulantes General | 
               <a href="#inicio">
                 <i class="bi bi-arrow-bar-up"></i>
               </a>
@@ -212,7 +212,7 @@ $perfil = $_SESSION['perfil'];
         <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
         <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Buscar ..." aria-describedby="basic-addon1" id="myInput">
       </div>
-        <table class="table">
+        <!-- <table class="table">
           <thead class="text-light text-center" style="background:#b23933">
             <tr>
               <th scope="col">#</th>
@@ -225,7 +225,7 @@ $perfil = $_SESSION['perfil'];
               <th scope="col">Calificaciones</th>
             </tr>
           </thead>
-          <tbody class="text-center" id="myTable">
+          <tbody class="text-center" id="myTable"> -->
             <?php
             include('query/lista_postulantes_general2.php');
             ?>
@@ -236,46 +236,7 @@ $perfil = $_SESSION['perfil'];
     </div>
   </div>
 
-  <div class="album py-5 bg-light">
-    <div class="container">
-      <div class="mb-4">
-        <p><span id="seccion_USA"></span>
-          <p class="h2" >
-          <i class="bi bi-flag-fill text-danger"></i> Postulantes USA | 
-            <a href="#inicio"><i class="bi bi-arrow-bar-up"></i></a></p></p>
-            <p><small>Postulantes Migrantes <strong>de Zacatecas</strong>.</small></p>
-      </div>
-      
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-
-      <div class="input-group mb-3">
-        <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
-        <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Buscar ..." aria-describedby="basic-addon1" id="myInput2">
-      </div>
-       
-      <table class="table">
-          <thead class="text-light text-center" style="background:#b23933">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">CURP</th>
-              <th scope="col">Edad</th>
-              <th scope="col">Teléfono</th>
-              <th scope="col"># Documentos</th>
-              <th scope="col">Calificaciones</th>
-            </tr>
-          </thead>
-          <tbody class="text-center" id="myTable2">
-            <?php
-            include('query/lista_postulantes_general_usa.php');
-            ?>
-          </tbody>
-        </table>
-     
-
-      </div><!-- row -->
-    </div>
-  </div>
+  
 
 </main>
 
