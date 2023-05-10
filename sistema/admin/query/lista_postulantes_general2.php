@@ -21,6 +21,7 @@ while($rowCategoria=$resultadoCategorias->fetch_assoc()){
                 <th scope="col">Edad</th>
                 <th scope="col">Municipio</th>
                 <th scope="col">Teléfono</th>
+                <th scope="col">Documentos</th>
                 </tr>
             </thead>
             <tbody class="text-center">
@@ -28,17 +29,46 @@ while($rowCategoria=$resultadoCategorias->fetch_assoc()){
     ';
 
     // while interno
-    $sqlUsr = "SELECT * FROM usr WHERE categoria = '$categoria' ORDER BY id ASC";
+    $sqlUsr = "SELECT * FROM usr WHERE categoria = '$categoria' AND perfil = 1 ORDER BY id ASC";
     $resultadoUsr = $conn->query($sqlUsr);
     while($rowUsr=$resultadoUsr->fetch_assoc()){
+        $idD = $rowUsr['id'];
+        $sqlDoc = "SELECT * FROM documentos WHERE id_ext='$idD'";
+        $resultadoDoc = $conn->query($sqlDoc);
+        $noDocs=$resultadoDoc->num_rows;
         echo'
         <tr>
             <td>'.$rowUsr['nombre'].'</td>
             <td>'.$rowUsr['curp'].'</td>
-            <td>'.$rowUsr['edad'].'</td>
-            <td>'.$rowUsr['municipio'].'</td>
-            <td>'.$rowUsr['telefono'].'</td>
-        </tr>
+            <td>'.$rowUsr['edad'].'</td>';
+            $idMun = $rowUsr['municipio'];
+            $idMun = "SELECT * FROM municipio WHERE id = '$idMun'";
+            $resultadoMun = $conn->query($idMun);
+            $rowMun = $resultadoMun->fetch_assoc();
+        echo'
+            <td>'.$rowMun['municipio'].'</td>
+            ';
+        echo'
+            <td>'.$rowUsr['telefono'].'</td>';
+
+        if($noDocs==0){
+            echo'
+            <td><span class="badge text-bg-danger">'.$noDocs.'</span></td>
+            ';
+        }
+        else if($noDocs >= 1 && $noDocs <= 10 ){
+            echo'
+            <a href="#">
+            <td><span class="badge text-bg-warning">'.$noDocs.'</span></td>
+            </a>
+            ';
+        }
+        else if($noDocs == 11 ){
+            echo'
+            <td><span class="badge text-bg-primary">'.$noDocs.'</span></td>
+            ';
+        }
+        echo'</tr>
         ';
     
 }
@@ -48,10 +78,5 @@ while($rowCategoria=$resultadoCategorias->fetch_assoc()){
         </table>
 
         ';
-
 }
-
-
-
-
 ?>
