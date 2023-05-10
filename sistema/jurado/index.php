@@ -179,7 +179,7 @@ $categoria = $_SESSION['categoria'];
         <?php echo '<input type="text" value="'.$categoria.'" id="catCompleto" hidden>'?>
         <h5 class="fw-bold" style="color:white">Mesa: <output id="categoriaOut"></h5>
         <p id="resultSpan"></p>
-        <p class="lead text-light mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
+        <p class="lead text-light mt-2">Sistema de postulación del INJUVENTUD para integrarse al PEJ2023.</p>
         <p>
           <hr class="text-secondary">
           <a href="#seccion_convocatoria" class="btn btn-primary my-2"><i class="bi bi-clipboard-data-fill"></i> Dashboard</a>
@@ -273,8 +273,6 @@ $categoria = $_SESSION['categoria'];
         </div>
       </div>
     </div>
-    
-    
   </div>
 </footer>
 
