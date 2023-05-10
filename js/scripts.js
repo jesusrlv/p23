@@ -309,9 +309,9 @@ $(document).ready(function() {
      });
 });
 
-function alertaC(){
-    alert("Estás seleccionando esta categoría para participar, al registrarte con esta, no podrás cambiar a otra");
-}
+// function alertaC(){
+//     alert("Estás seleccionando esta categoría para participar, al registrarte con esta, no podrás cambiar a otra");
+// }
 
 // REGISTRO DE USUARIOS USA
 $(document).ready(function() {
