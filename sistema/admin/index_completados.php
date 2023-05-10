@@ -198,7 +198,7 @@ $perfil = $_SESSION['perfil'];
       <div class="mb-4">
         <p><span id="seccion_MX"></span>
           <p class="h2">
-          <i class="bi bi-flag-fill text-success"></i> Postulantes General | 
+          <i class="bi bi-flag-fill text-success"></i> Postulantes expediente completo | 
               <a href="#inicio">
                 <i class="bi bi-arrow-bar-up"></i>
               </a>
@@ -212,22 +212,8 @@ $perfil = $_SESSION['perfil'];
         <span class="input-group-text" id="basic-addon1"><i class="bi bi-search"></i></span>
         <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Buscar ..." aria-describedby="basic-addon1" id="myInput">
       </div>
-        <!-- <table class="table">
-          <thead class="text-light text-center" style="background:#b23933">
-            <tr>
-              <th scope="col">#</th>
-              <th scope="col">Nombre</th>
-              <th scope="col">CURP</th>
-              <th scope="col">Edad</th>
-              <th scope="col">Municipio</th>
-              <th scope="col">Teléfono</th>
-              <th scope="col"># Documentos</th>
-              <th scope="col">Calificaciones</th>
-            </tr>
-          </thead>
-          <tbody class="text-center" id="myTable"> -->
             <?php
-            include('query/lista_postulantes_general2.php');
+            include('query/lista_postulantes_completados2.php');
             ?>
           </tbody>
         </table>

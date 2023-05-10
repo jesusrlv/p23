@@ -14,7 +14,7 @@ include('query/name.php');
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="INJUVENTUD" content="Consejo Juvenil">
+    <meta name="INJUVENTUD" content="PEJ23">
     <meta name="" content="">
     <link rel="icon" type="image/png" href="../../img/icon.ico" sizes="22x21">
     <title>Perfil Admin | Consejo Juvenil</title>
@@ -40,6 +40,20 @@ include('query/name.php');
     <style>
       body{
         font-family: 'Montserrat', sans-serif;
+      }
+      #colorRounded{
+        background-color: rgba(184, 11, 4, 0.8);
+      }
+      #imgPortrait{
+        background-image: url('../../img/fondo_pej2023.png');
+
+        object-fit: cover;
+        background-position: auto 100%; /* Center the image */
+        background-repeat: repeat;
+        background-size: 100% auto; /* Resize the background image to cover the entire container */
+        /* background-position: center; */
+        width:100%; 
+        height:100%;
       }
 
       .bd-placeholder-img {
@@ -116,6 +130,22 @@ include('query/name.php');
           transform: scale(1.03);
           transition: width 0.3s, height 0.3s, transform 0.3s;
         }
+        #imgPortrait{
+
+        object-fit: cover;
+        background-repeat: no-repeat;
+        background-size: 350% 18%; /* Resize the background image to cover the entire container */
+        background-position: 0 0;
+        
+       
+        }
+        #colorRounded{
+          background-color: rgba(184, 11, 4, 0.5);
+          border-radius:0px;
+        }
+        #textPortada{
+          font-size:8px;
+        }
       }
     </style>
 
@@ -123,35 +153,34 @@ include('query/name.php');
   </head>
   <body>
     
-<header>
+  <header>
 <span id="inicio"></span>
-  <div class="navbar navbar-dark shadow-sm" style="background: #FAD40D">
+  <div class="navbar navbar-dark shadow-sm bg-dark text-light" style="background: #FAD40D;color:white">
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
         <img src="../../img/logo_injuventud_0.png" width="20" alt="" class="me-1">
-        <strong class="text-dark">ADMINISTRADOR | Consejo Juvenil 2023</strong>
+        <strong class="text-light" id="texto_">ADMINISTRADOR | Consejo Juvenil 2023</strong>
       </a>
-      <a href="prcd/sort.php" type="button" class="btn btn-sm btn-outline-dark"><i class="bi bi-door-open"></i> Salir</a>
+      <a href="prcd/sort.php" type="button" class="btn btn-sm btn-outline-light"><i class="bi bi-door-open"></i> Salir</a>
     </div>
   </div>
 </header>
 
-<main>
+<main id="imgPortrait">
 
-  <!-- <section class="py-5 text-center container"> -->
-  <section class="text-center container">
+<section class="text-center container">
     <!-- <div class="row py-lg-5"  style="background-image: url('../../img/logo_consejo_05.png')"> -->
-    <div class="row py-lg-5"  style="background-image: url('../../assets/img/background.jpg');background-position: center;background-repeat: no-repeat;background-size: cover;width:100%;">
-      <div class="col-lg-6 col-md-8 mx-auto rounded bg-light bg-opacity-50 p-2">
-        <h1 class="fw-light"><img src="../../img/logo_consejo_04.png" alt="" width="360"></h1>
-        <h2 class="fw-bold" style="color:#5a5557">Bienvenido</h2>
-        <h2 class="fw-bold" style="color:#5a5557"><i class="bi bi-person-circle"></i></h2>
-        <h2 class="fw-bold" style="color:#5a5557"><?php echo $nombre ?></h2>
-        <p class="lead text-dark mt-2">Sistema de postulación del INJUVENTUD para integrarse al Consejo Juvenil del Estado de Zacatecas en su edición 2023.</p>
+    <div class="row py-lg-5" >
+      <div class="col-lg-6 col-md-8 mx-auto rounded p-2" id="colorRounded">
+        <h1 class="fw-light"><img src="../../img/PEJ23.png" alt="" width="360"></h1>
+        <h2 class="fw-bold" style="color:white">Bienvenido</h2>
+        <h2 class="fw-bold" style="color:white"><i class="bi bi-person-circle"></i></h2>
+        <h2 class="fw-bold" style="color:white"><?php echo $nombre ?></h2>
+        <p id="resultSpan"></p>
+        <p class="lead text-light mt-2">Sistema de postulación del INJUVENTUD para integrarse al PEJ2023.</p>
         <p>
           <hr class="text-secondary">
-          <a href="#seccion_MX" class="btn btn-danger my-2"><i class="bi bi-flag-fill text-success"></i> Postulantes Mx</a>
-          <a href="#seccion_USA" class="btn btn-primary my-2"><i class="bi bi-flag-fill text-danger"></i> Postulantes USA</a>
+          <a href="#seccion_convocatoria" class="btn btn-primary my-2"><i class="bi bi-clipboard-data-fill"></i> Dashboard</a>
         </p>
       </div>
     </div>

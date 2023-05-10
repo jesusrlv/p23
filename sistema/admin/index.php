@@ -195,7 +195,7 @@ $perfil = $_SESSION['perfil'];
     <div class="row p-5 mt-3 mb-3  my-auto">
 
       <div class="col-md-6 mt-3">
-        <a href="completados.php" style="text-decoration: none">
+        <a href="index_completados.php" style="text-decoration: none">
         <div class="card bg-success text-light mx-auto" style="width: 18rem;">
         <i class="bi bi-list-check h1 text-center mt-3"></i>
           <div class="card-body">
@@ -206,7 +206,7 @@ $perfil = $_SESSION['perfil'];
         </a>
       </div>
       <div class="col-md-6 mt-3">
-      <a href="no_completados.php" style="text-decoration: none">
+      <a href="index_no_completados.php" style="text-decoration: none">
         <div class="card bg-danger text-light mx-auto" style="width: 18rem;">
           <i class="bi bi-list-columns h1 text-center mt-3"></i>
           <div class="card-body">

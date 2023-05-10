@@ -36,6 +36,7 @@ while($rowCategoria=$resultadoCategorias->fetch_assoc()){
         $sqlDoc = "SELECT * FROM documentos WHERE id_ext='$idD'";
         $resultadoDoc = $conn->query($sqlDoc);
         $noDocs=$resultadoDoc->num_rows;
+        if($noDocs < 11){
         echo'
         <tr>
             <td>'.$rowUsr['nombre'].'</td>
@@ -70,7 +71,7 @@ while($rowCategoria=$resultadoCategorias->fetch_assoc()){
         }
         echo'</tr>
         ';
-    
+    }//fin de if docs
 }
     // while interno
         echo '

@@ -12,7 +12,7 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
     $rowContar = $resultadoContar -> fetch_assoc();
     $numero = $rowContar['contar'];
     if($numero == 11){
-        $calif = "SELECT * FROM calificacion WHERE id_ext = '$idDocs'";
+        $calif = "SELECT * FROM calificacion WHERE id_ext = '$idDocs' AND id_jurado = '$id' ";
         $resultadoCalif = $conn->query($calif);
         $rowFila = $resultadoCalif->num_rows;
 
@@ -64,7 +64,7 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
 
         	if($rowFila == null || $rowFila == 0){
         	echo'
-            <span class="badge rounded-pill text-bg-warning">
+            <span class="badge rounded-pill text-bg-danger">
         	<i class="bi bi-x-circle-fill"></i> Sin calificar
             </span>
             ';
@@ -77,7 +77,8 @@ while($rowSQL = $resultadoSQL->fetch_assoc()){
         	else if($rowFila == 2){
         	echo'
             <span class="badge rounded-pill text-bg-warning">
-        	<i class="bi bi-exclamation-circle-fill"></i> Falta calificar 3 documentos';
+        	<i class="bi bi-exclamation-circle-fill"></i> Falta calificar 3 documentos
+            </span>';
         	}
         	else if($rowFila == 3){
         	echo'
