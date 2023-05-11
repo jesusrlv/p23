@@ -1,3 +1,9 @@
+<html>
+    <header>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </header>
+<body>
+
 <?php
 require('conn/qc.php');
 use PHPMailer\PHPMailer\PHPMailer;
@@ -13,11 +19,12 @@ $resultadoSql = $conn -> query($sql);
 $rowSql = $resultadoSql->fetch_assoc();
 $no_resultados = mysqli_num_rows($resultadoSql);
 
-$nombre = $rowSql['nombre'];
-$pwd = $rowSql['pwd'];
+
 
 // if(!empty($rowSql['email'])){
 if($no_resultados == 1){
+    $nombre = $rowSql['nombre'];
+    $pwd = $rowSql['pwd'];
 
         // email
         $mail = new PHPMailer(true);
@@ -54,41 +61,65 @@ if($no_resultados == 1){
         
             $mail->send();
 
-            if($mail->send){
-                echo'
+          
+                echo"
                 <script>
-                    alert("Se envío un correo con tus datos de acceso");
+                    Swal.fire({
+                        icon: 'success',
+                        imageUrl: '../img/logo_injuventud_01.png',
+                        imageHeight: 200,
+                        title: 'Correo enviado',
+                        text: 'Se envío un correo con tus datos de acceso',
+                        confirmButtonColor: '#3085d6',
+                        footer: 'INJUVENTUD'
+                    }).then(function(){window.location='../index.html';});
                 </script>
-                ';
-                header("Location: ../index.html");
-            }
-            else{
-                echo'
-                <script>
-                    alert("No se envío el correo");
-                </script>
-                ';
-                header("Location: ../index.html");
-            }
+                ";
+            
+          
+               
+            
 
         }catch (Exception $e) {
             echo "
            
             Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            echo"
+            <script>
+            Swal.fire({
+                icon: 'error',
+                imageUrl: 'img/logo_injuventud_01.png',
+                imageHeight: 200,
+                title: 'Fallo',
+                text: 'No se envió el correo',
+                confirmButtonColor: '#3085d6',
+                footer: 'INJUVENTUD'
+            }).then(function(){window.location='../index.html';});
+            </script>
+            ";
         }    
     
 }
 else{
-    $error = $conn->error;
-echo $error;
-//     echo'
-//     <script>
-//     alert("No se envió correo");
-//     </script>';
+    // $error = $conn->error;
+    // echo $error;
 
+    echo"
+                <script>
+                Swal.fire({
+                    icon: 'error',
+                    imageUrl: 'img/logo_injuventud_01.png',
+                    imageHeight: 200,
+                    title: 'Fallo',
+                    text: 'No se envió el correo',
+                    confirmButtonColor: '#3085d6',
+                    footer: 'INJUVENTUD'
+                }).then(function(){window.location='../index.html';});
+                </script>
+                ";
  }
 
-
-
-
 ?>
+
+</body>
+</html>

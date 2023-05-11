@@ -13,8 +13,18 @@ while($rowDocs = $resultadoDocs->fetch_assoc()){
     <tr class="align-middle">
         <td>'.$x.'</td>
         <td><strong>'.$rowDocumento['documento'].'</strong></td>
-        <td class="text-start">'.$rowDocumento['descripcion'].'</td>
-        <td><a href="../'.$rowDocs['link'].'"><i class="bi bi-filetype-pdf h4"></i></a></td>
+        <td class="text-start">'.$rowDocumento['descripcion'].'</td>';
+        if($rowDocumento['id'] == 9){
+            echo'
+            <td><a href="'.$rowDocs['link'].'" target="_blank"><i class="bi bi-filetype-pdf h4"></i></a></td>
+            ';
+        }
+        else{
+            echo'
+            <td><a href="../'.$rowDocs['link'].'" target="_blank"><i class="bi bi-filetype-pdf h4"></i></a></td>
+            ';
+        }
+        echo'
     </tr>
     ';
 }

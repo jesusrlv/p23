@@ -217,7 +217,7 @@ $perfil = $_SESSION['perfil'];
       </a>
       </div>
       <div class="col-md-6 mt-3">
-        <a href="calificaciones.php" style="text-decoration: none" class="text-dark">
+        <a href="index_calificaciones.php" style="text-decoration: none" class="text-dark">
         <div class="card bg-info mx-auto" style="width: 18rem;">
         <i class="bi bi-list-ol h1 text-center mt-3"></i>
           <div class="card-body">
@@ -233,7 +233,7 @@ $perfil = $_SESSION['perfil'];
         <i class="bi bi-card-list h1 text-center mt-3"></i>
           <div class="card-body">
             <p class="card-text text-center fs-1">4</p>
-            <p class="card-text text-center">Lista completa.</p>
+            <p class="card-text text-center">Lista general.</p>
           </div>
         </div>
         </a>
