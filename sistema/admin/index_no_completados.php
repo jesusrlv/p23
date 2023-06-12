@@ -154,8 +154,8 @@ $perfil = $_SESSION['perfil'];
   </head>
   <body>
     
-  <header>
-<span id="inicio"></span>
+<header>
+  <span id="inicio"></span>
   <div class="navbar navbar-dark shadow-sm bg-dark text-light" style="background: #FAD40D;color:white">
     <div class="container">
       <a href="#" class="navbar-brand d-flex align-items-center">
