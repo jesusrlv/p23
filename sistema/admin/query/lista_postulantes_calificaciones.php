@@ -13,7 +13,7 @@ while($rowCategoria=$resultadoCategorias->fetch_assoc()){
                 <i class="bi bi-arrow-bar-up"></i>
               </a>
           </p>
-          <table class="table">
+          <table class="table" id="tablaOrder">
             <thead class="text-light text-center" style="background:#b23933">
                 <tr>
                 <th scope="col">Nombre</th>

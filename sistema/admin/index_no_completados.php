@@ -222,8 +222,6 @@ $perfil = $_SESSION['perfil'];
     </div>
   </div>
 
-  
-
 </main>
 
 <footer class="text-light py-5" style="background:#b23933">
