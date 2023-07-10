@@ -154,7 +154,7 @@ $perfil = $_SESSION['perfil'];
 
     
   </head>
-  <body onload="cargarTable()">
+  <body>
     
   <header>
 <span id="inicio"></span>
@@ -215,10 +215,9 @@ $perfil = $_SESSION['perfil'];
         <input type="text" class="form-control" placeholder="Buscar ..." aria-label="Buscar ..." aria-describedby="basic-addon1" id="myInput">
       </div>
             <?php
-            include('query/lista_postulantes_calificaciones.php');
+            include('query/lista_postulantes_calificaciones2.php');
             ?>
-          </tbody>
-        </table>
+       
        
       </div><!-- row -->
     </div>
@@ -282,6 +281,16 @@ $(document).ready(function () {
             });
         });
     });
+
+
+    // $(document).ready(function () {
+    //     $("body").onload(function () {
+    //       $('.tabla1 > tr').sort(function (a, b) {
+    //           return +$('td.pts1', b).text() > +$('td.pts1', a).text();
+    //       }).appendTo('.tabla1');
+
+    //     });
+    // });
 </script>
 
 <!-- modal datos visualizar -->
