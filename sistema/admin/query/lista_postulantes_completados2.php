@@ -16,6 +16,7 @@ while($rowCategoria=$resultadoCategorias->fetch_assoc()){
           <table class="table">
             <thead class="text-light text-center" style="background:#b23933">
                 <tr>
+                <th scope="col">#</th>
                 <th scope="col">Nombre</th>
                 <th scope="col">CURP</th>
                 <th scope="col">Edad</th>
@@ -31,15 +32,18 @@ while($rowCategoria=$resultadoCategorias->fetch_assoc()){
     // while interno
     $sqlUsr = "SELECT * FROM usr WHERE categoria = '$categoria' AND perfil = 1 ORDER BY id ASC";
     $resultadoUsr = $conn->query($sqlUsr);
+    $x=0;
     while($rowUsr=$resultadoUsr->fetch_assoc()){
         $idD = $rowUsr['id'];
         $sqlDoc = "SELECT * FROM documentos WHERE id_ext='$idD'";
         $resultadoDoc = $conn->query($sqlDoc);
         $noDocs=$resultadoDoc->num_rows;
         if($noDocs == 11){
+        $x++;
         echo'
         <tr>
-            <td>'.$rowUsr['nombre'].'</td>
+            <td>'.$x.'</td>
+            <td>'.strtoupper($rowUsr['nombre']).'</td>
             <td>'.$rowUsr['curp'].'</td>
             <td>'.$rowUsr['edad'].'</td>';
             $idMun = $rowUsr['municipio'];
